@@ -18,6 +18,11 @@
       list-style: disc !important;
       padding: 5px !important;
     }
+
+    .testimonial-area {
+      position: relative;
+      height: 95vh !important;
+    }
   </style>
 </head>
 
@@ -40,8 +45,8 @@
                 <div class="main-menu d-none d-lg-block">
                   <nav>
                     <ul id="navigation">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <!-- <li><a href="index.html">Home</a></li>
+                      <li><a href="contact.html">Contact</a></li> -->
 
                       <li class="button-header">
                         <a href="tel:+919962732229" class="header-btn"> <i class="fas fa-phone-alt"></i> +91 99627
@@ -101,8 +106,8 @@
           <div class="col-xl-5">
 
             <div class="section-tittle text-center mb-45 ">
-              <span>Check our best promotional tour</span>
-              <h2>Upcoming Events </h2>
+              <!-- <span>Check our best promotional tour</span> -->
+              <h2>Visited Places</h2>
             </div>
           </div>
         </div>
@@ -201,92 +206,7 @@
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="col-xl-11 col-lg-11 col-md-9">
-            <div class="h1-testimonial-active">
-
-              <div class="single-testimonial text-center">
-                <div class="testimonial-caption ">
-                  <div class="testimonial-top-cap">
-                    <h2>What customers say</h2>
-                    <p>I'm from Malaysia and have been using MSK Travel services every time my trip to India.
-                      Transportation arrangement was excellent and vehicle condition is very tip top, clean and neat.
-                      Sasi is just very friendly, trustworthy and cooperative. Overall, I had an absolutely fantastic
-                      and well organized trip with MSK. Will definitely contact you for future trips to India! 😀
-                    </p>
-                  </div>
-
-                  <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                    <div class="founder-img">
-                      <img src="images/review/1.png" alt="" width="60px" height="60px">
-                    </div>
-                    <div class="founder-text">
-                      <span>Sharmila Belonderen</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-testimonial text-center">
-                <div class="testimonial-caption ">
-                  <div class="testimonial-top-cap">
-                    <h2>What customers say</h2>
-                    <p>I'm from Malaysia and have been using MSK Travel services every time my trip to India.
-                      Transportation arrangement was excellent and vehicle condition is very tip top, clean and neat.
-                      Sasi is just very friendly, trustworthy and cooperative. Overall, I had an absolutely fantastic
-                      and well organized trip with MSK. Will definitely contact you for future trips to India! 😀
-                    </p>
-                  </div>
-
-                  <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                    <div class="founder-img">
-                      <img src="images/review/1.png" alt="" width="60px" height="60px">
-                    </div>
-                    <div class="founder-text">
-                      <span>Sharmila Belonderen</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="single-testimonial text-center">
-                <div class="testimonial-caption ">
-                  <div class="testimonial-top-cap">
-                    <h2>What customers say</h2>
-                    <p>MSK has been very good tour guide for our family while we were in India.He is very punctual as
-                      well maintained his work ethics.He keeps his vehicle clean n hygienic.He knows temple in India
-                      very well compared to other guides.For family trips it is worth for you all to have a person like
-                      him to show around India regardless
-                      temple or tourists attraction.Kudos to MSK for his dedication. 👏🙏
-                    </p>
-                  </div>
-
-                  <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                    <div class="founder-img">
-                      <img src="images/review/2.png" alt="" width="60px" height="60px">
-                    </div>
-                    <div class="founder-text">
-                      <span>Thanesh Arumugam</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="single-testimonial text-center">
-                <div class="testimonial-caption ">
-                  <div class="testimonial-top-cap">
-                    <h2>What customers say</h2>
-                    <p>Highly trusted and professional Driver. Car is maintained very neat and sanitized regularly.
-                    </p>
-                  </div>
-
-                  <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                    <div class="founder-img">
-                      <img src="images/review/3.png" alt="" width="60px" height="60px">
-                    </div>
-                    <div class="founder-text">
-                      <span>nivas CT</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="h1-testimonial-active" id="wpac-review"></div>
           </div>
         </div>
       </div>
@@ -464,6 +384,7 @@
                     <li><a href="#">Pondichery Trips</a></li>
                     <li><a href="#">Aarupadai Veedu Murugan Temple Dharshan</a></li>
                     <li><a href="#">Pancha Sthalam Dharshan</a></li>
+                    <li><a href="#">Nava Graha Temple Dharshan</a></li>
                   </ul>
                 </div>
               </div>
@@ -495,8 +416,39 @@
   </div>
 
 
+
   <script src="js/vendor-modernizr-3.5.0.min.js"></script>
   <script src="js/vendor-jquery-1.12.4.min.js"></script>
+
+  <script src="./data/reviews.js"></script>
+  <script type="text/javascript">
+    // https://serpapi.com/search.json?engine=google_maps_reviews&data_id=0x3a525dd746fca92f:0x3e1eb78acc053d16&api_key=af62191ec83492b98ab985ce12d0a13923fed9dafa9d665d2a18fba5cde3546f
+    // Data_id : 0x3a525dd746fca92f:0x3e1eb78acc053d16
+    console.log(reviews);
+    testHtml = "";
+    reviews.map(review => {
+      const inp = `<div class="single-testimonial text-center">
+        <div class="testimonial-caption ">
+          <div class="testimonial-top-cap">
+            <h2>What customers say</h2>
+            <p style="font-size:18px">${review.snippet}</p>
+          </div>
+
+          <div class="testimonial-founder d-flex align-items-center justify-content-center">
+            <div class="founder-img">
+              <img src=${review.user.thumbnail} alt="" width="60px" height="60px">
+                    </div>
+              <div class="founder-text">
+                <span>${review.user.name}</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://g.page/r/CRY9BcyKtx4-EA0/review" class="header-btn" style="margin-top:3%" target="_blank">Leave your Review</a>
+        </div>`;
+      testHtml += inp;
+    });
+    $("#wpac-review").html(testHtml);
+  </script>
   <script src="js/js-popper.min.js+bootstrap.min.js.pagespeed.jc.wrYgl799WE.js"></script>
   <script>eval(mod_pagespeed_PvZL7macLO);</script>
   <script>eval(mod_pagespeed_sSqTI4X7m3);</script>
