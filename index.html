@@ -19,9 +19,58 @@
       padding: 5px !important;
     }
 
+    .support-caption li {
+      list-style: none !important;
+      padding: 10px !important;
+      border: 1px solid #737272;
+      border-radius: 5px;
+      margin: 10px 0px;
+      box-shadow: 0px 2px 14px 1px rgba(255, 205, 98, 0.65);
+      -webkit-box-shadow: 0px 2px 14px 1px rgba(255, 205, 98, 0.65);
+      -moz-box-shadow: 0px 2px 14px 1px rgba(255, 205, 98, 0.65);
+    }
+
     .testimonial-area {
       position: relative;
       height: 95vh !important;
+    }
+
+    .logo-img {
+      margin-left: 10%;
+      padding-top: 0%;
+      width: 110px !important;
+      position: absolute;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .pad-five {
+        padding-top: 30%
+      }
+
+      .slicknav_menu {
+        background: transparent !important;
+      }
+
+      .logo-img {
+        width: 90px !important;
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+    }
+
+    .more-review {
+      padding: 10px;
+      color: #fff !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+      border-radius: 5px;
+      padding: 13px 30px !important;
+      display: inline-block !important;
+      background: #ffc800;
+      margin: auto !important;
+      width: 200px;
+      margin-top: 10% !important;
     }
   </style>
 </head>
@@ -35,8 +84,7 @@
 
             <div class="col-xl-2 col-lg-2">
               <div class="logo">
-                <a href="index.html"><img src="images/New_Logo.png"
-                    style="width: 200px !important;position: absolute;top: -40px !important;"></a>
+                <a href="index.html"><img src="images/New_Logo.png" class="logo-img"></a>
               </div>
             </div>
             <div class="col-xl-10 col-lg-10">
@@ -66,8 +114,7 @@
       </div>
     </div>
   </header>
-  <main>
-
+  <main class="pad-five">
     <div class="slider-area fix">
       <div class="slider-active">
         <div class="single-slider">
@@ -79,7 +126,8 @@
                   </h1>
                   <p data-animation="fadeInUp" data-delay="0.6s">Let&rsquo;s start your journey with us, your dream will
                     come true</p>
-                  <a href="#" class="btn slider-btn " data-animation="bounceIn" data-delay="1s">Explore Destinations</a>
+                  <a href="tel:+919962732229" class="btn slider-btn " data-animation="bounceIn" data-delay="1s">Explore
+                    Destinations</a>
                 </div>
               </div>
             </div>
@@ -192,7 +240,8 @@
                   <li>Goods left in the car is user's responsibility.</li>
                 </ul>
                 </p>
-                <a href="tel:+919962732229" class="btn about-btn"> <i class="fas fa-phone-alt"></i> Call for a ride</a>
+                <a href="tel:+919962732229" class="btn about-btn my-2"> <i class="fas fa-phone-alt"></i> Call for a
+                  ride</a>
               </div>
             </div>
           </div>
@@ -424,6 +473,7 @@
     // Data_id : 0x3a525dd746fca92f:0x3e1eb78acc053d16
     console.log(reviews);
     testHtml = "";
+    // review = [{}];
     reviews.map(review => {
       const inp = `<div class="single-testimonial text-center">
         <div class="testimonial-caption ">
@@ -445,6 +495,9 @@
         </div>`;
       testHtml += inp;
     });
+    testHtml += `<div class="single-testimonial text-center">
+          <a href="https://maps.google.com/?cid=4476216886409116950" class="more-review" target="_blank">For More Reviews</a>
+        </div >`
     $("#wpac-review").html(testHtml);
   </script>
   <script src="js/js-popper.min.js+bootstrap.min.js.pagespeed.jc.wrYgl799WE.js"></script>
@@ -476,16 +529,6 @@
   <script>eval(mod_pagespeed_rbQzwRlZFD);</script>
   <script>eval(mod_pagespeed_hAMwqNQeID);</script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
-  </script>
-  <script defer src="js/beacon.min.js"
-    data-cf-beacon='{"rayId":"67782c81fdfc0885","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.7.0","si":10}'></script>
 </body>
 
 </html>
